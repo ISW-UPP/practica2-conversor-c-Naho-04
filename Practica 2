@@ -1,0 +1,103 @@
+/*Crear un programa conversor con el menú de monedas, distancia y peso
+Base será MXN, Monedas: Al menos 5 de diferentes países
+Base serán Kms, Distancia: in, ft, cm, nm, ly.
+Base serán Kgs, Peso: Ton, oz, lb, µg, Tg
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int OpMenu();
+void OpSubmenuMonedas();
+
+int main() {
+
+    int opcion;
+
+    do {
+        opcion = OpMenu();
+
+        switch (opcion) {
+        case 1:
+            OpSubmenuMonedas();
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+        default:
+            break;
+        }
+    } while (opcion != 4);
+
+}
+
+int OpMenu() {
+
+    int op;
+
+    do {
+        cout << "\n"
+            << "     CONVERSION DE UNIDADES\n"
+            << "===============================\n"
+            << "1.- Monedas ......... (Pulsa 1)\n"
+            << "2.- Distancia ....... (Pulsa 2)\n"
+            << "3.- Peso ..... (Pulsa 3)\n"
+            << "4.- Salir ........... (Pulsa 4)\n"
+            << "===============================\n"
+            << "INTRODUZCA UNA OPCION (1-4): ";
+        cin >> op;
+
+        if (cin.fail() || cin.bad()) {
+            op = 0;
+            cin.clear();
+            cin.ignore(80, '\n');
+        }
+
+    } while (op < 1 || op > 4);
+
+    return op;
+}
+
+void OpSubmenuMonedas() {
+
+    int op;
+
+    do {
+        cout << "\n"
+            << "     CONVERSION DE MONEDAS\n"
+            << "===============================\n"
+            << "1.- Euros a Pesos ... (Pulsa 1)\n"
+            << "2.- Dolares a Pesos . (Pulsa 2)\n"
+            << "3.- Pesos a Euros ... (Pulsa 3)\n"
+            << "4.- Pesos a Dolares . (Pulsa 4)\n"
+            << "5.- Cancelar ........ (Pulsa 5)\n"
+            << "===============================\n"
+            << "INTRODUZCA UNA OPCION (1-5): ";
+        cin >> op;
+
+        if (cin.fail() || cin.bad()) {
+            op = 0;
+            cin.clear();
+            cin.ignore(80, '\n');
+        }
+
+        switch (op) {
+        case 1:
+            cout << "\nDe Euros a Pesos\n";
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        default:
+            break;
+        }
+
+    } while (op != 5);
+}
